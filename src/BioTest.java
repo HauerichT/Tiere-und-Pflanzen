@@ -33,7 +33,7 @@ public class BioTest {
         loewe.setNahrungTiere("Zebras");
         System.out.println(loewe.getBezeichnung() + "n fressen " + loewe.getNahrungTiere());
 
-        // Initialisierung des Tier-Objektes bär
+        // Initialisierung des Tier-Objektes baer
         Tier baer = new Tier();
         baer.setBezeichnung("Bär");
         baer.setNahrungPflanzen("Beeren");
