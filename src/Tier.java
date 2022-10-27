@@ -2,7 +2,6 @@ public class Tier {
     private String bezeichnung;
     private String nahrungTiere = "-";
     private String nahrungPflanzen = "-";
-    private String nahrungsart = "-";
 
     public void setBezeichnung(String pBezeichnung) {
         bezeichnung = pBezeichnung;
@@ -16,7 +15,18 @@ public class Tier {
         nahrungPflanzen = pPflanze;
     }
 
+    public String getBezeichnung() {
+        return bezeichnung;
+    }
+    public String getNahrungTiere() {
+        return nahrungTiere;
+    }
+    public String getNahrungPflanzen() {
+        return nahrungPflanzen;
+    }
+
     public String getNahrungsart() {
+        String nahrungsart = "-";
         if (nahrungTiere.equals("-") && !nahrungPflanzen.equals("-")) {
             nahrungsart = "Pflanzenfresser";
         }

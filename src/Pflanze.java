@@ -9,5 +9,13 @@ public class Pflanze {
     public void setBeschreibung(String pBeschreibung) {
         beschreibung = pBeschreibung;
     }
+
+    public String getBezeichnung() {
+        return bezeichnung;
+    }
+
+    public String getBeschreibung() {
+        return beschreibung;
+    }
 }
 
