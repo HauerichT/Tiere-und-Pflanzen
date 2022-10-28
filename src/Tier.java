@@ -4,10 +4,12 @@ public class Tier extends Lebewesen {
     private String nahrungTiere = "-";
     private String nahrungPflanzen = "-";
 
-    // Setter-Methoden
+    // fügt dem Tier Objekt Tiere als Nahrung hinzu
     public void addNahrung(Tier tier) {
         nahrungTiere = tier.getBezeichnung();
     }
+
+    // fügt dem Tier Objekt Pflanzen als Nahrung hinzu
     public void addNahrung(Pflanze pflanze) {
         nahrungPflanzen = pflanze.getBezeichnung();
     }
