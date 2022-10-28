@@ -1,32 +1,15 @@
-public class Tier {
+public class Tier extends Lebewesen {
 
     // Instanzvariablen
-    private String bezeichnung;
     private String nahrungTiere = "-";
     private String nahrungPflanzen = "-";
-    private String nahrungsart = "-";
-
 
     // Setter-Methoden
-    public void setBezeichnung(String pBezeichnung) {
-        bezeichnung = pBezeichnung;
+    public void addNahrung(Tier tier) {
+        nahrungTiere = tier.getBezeichnung();
     }
-    public void setNahrungTiere(String pTier) {
-        nahrungTiere = pTier;
-    }
-    public void setNahrungPflanzen(String pPflanze) {
-        nahrungPflanzen = pPflanze;
-    }
-
-    // Getter-Methoden
-    public String getBezeichnung() {
-        return bezeichnung;
-    }
-    public String getNahrungTiere() {
-        return nahrungTiere;
-    }
-    public String getNahrungPflanzen() {
-        return nahrungPflanzen;
+    public void addNahrung(Pflanze pflanze) {
+        nahrungPflanzen = pflanze.getBezeichnung();
     }
 
     /*
@@ -35,19 +18,17 @@ public class Tier {
      */
     public String getNahrungsart() {
         if (nahrungTiere.equals("-") && !nahrungPflanzen.equals("-")) {
-            nahrungsart = "Pflanzenfresser";
+            return getBezeichnung() + " ist ein Pflanzenfresser.";
         }
         else if (!nahrungTiere.equals("-") && nahrungPflanzen.equals("-")) {
-            nahrungsart = "Fleischfresser";
+            return getBezeichnung() + " ist ein Fleischfresser.";
         }
-        else if (!nahrungTiere.equals("-") && !nahrungPflanzen.equals("-")) {
-            nahrungsart = "Allesfresser";
+        else if (!nahrungTiere.equals("-")) {
+            return getBezeichnung() + " ist ein Allesfresser.";
         }
         else {
-            nahrungsart = "(Nahrung ist noch nicht definiert).";
+            return getBezeichnung() + " hat noch keine Nahrungsangaben.";
         }
-
-        return bezeichnung + " ist ein " + nahrungsart + ".";
     }
 
 }
